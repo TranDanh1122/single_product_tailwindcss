@@ -19,6 +19,13 @@
       font-size: 16px;
     }
 
+    @media (max-width:768px) {
+      html,
+      body {
+        font-size: 12px;
+      }
+    }
+
     .attribution {
       font-size: 11px;
       text-align: center;
@@ -31,11 +38,14 @@
 </head>
 
 <body>
+  <div class="overlay hidden fixed top-0 left-0 bg-slate-900 bg-opacity-50 h-full w-full z-10"></div>
   <header
-    class="container w-full mx-auto my-0 flex justify-start gap-14 max-w-[1110px]  border-b-[1px] border-grayish_blue relative">
+    class="container w-full mx-auto my-0 flex justify-start gap-14 max-w-[1110px] mb:gap-8  border-b-[1px] border-grayish_blue relative mb:w-[90%] mb:max-w-none tb:w-[75%]">
+    <i class="relative z-20 w-4 h-4 my-auto mobile_menu hidden mb:block"> </i>
     <img src="./images/logo.svg" alt="logo" class="w-38 h-full object-cover py-8 cursor-pointer">
-    <nav>
-      <ul class="nav_list flex gap-8 items-center text-dark_grayish_blue leading-6 h-full">
+    <nav class="mb:fixed mb:top-0 mb:left-0 mb:bg-white mb:h-full mb:w-2/3 z-10 mb:translate-x-[-100%]">
+      <ul
+        class="nav_list flex gap-8 items-center text-dark_grayish_blue leading-6 h-full mb:flex-col mb:mt-32 mb:items-start mb:ml-8 mb:h-fit">
         <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#"> Collections</a></li>
         <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#"> Men</a></li>
         <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#"> Women</a></li>
@@ -44,13 +54,14 @@
       </ul>
     </nav>
     <div class="cart_warraper w-6 h-6 my-auto ml-auto relative">
-      <img src="./images/icon-cart.svg" alt="cart" class="w-full h-full cursor-pointer cart_icon">
+      <img src="./images/icon-cart.svg" alt="cart" class="w-full min-w-6 h-full cursor-pointer cart_icon">
       <span class="cart_qty absolute top-[-1rem] left-5 text-white bg-orange rounded-[50%] px-2">0</span>
     </div>
     <img src="./images/image-avatar.png" alt="avatar"
       class="w-12 h-12 rounded-[50%] object-cover cursor-pointer my-auto">
 
-    <div class="cart_box absolute top-20 w-2/5 right-20 shadow-md p-6 pb-8 bg-white z-10 hidden">
+    <div
+      class="cart_box absolute top-20 w-2/5 right-20 shadow-md p-6 pb-8 bg-white z-10 hidden rounded-2xl mb:w-full mb:shadow-2xl mb:right-0">
       <span class=" block title text-very_dark_blue font-bold pb-6 border-b-[1px] border-b-grayish_blue">Cart</span>
       <div class="items flex w-full flex-col flex-nowrap mt-8 ">
         <!-- <div class="item flex gap-4 items-center">
@@ -68,9 +79,9 @@
       </div>
     </div>
   </header>
-  <main class="container max-w-[1110px] mx-auto mt-20">
+  <main class="container max-w-[1110px] mx-auto mt-20 mb:w-[90%] mb:max-w-none tb:w-[75%]">
     <div class="product flex flex-wrap items-center justify-between gap-8">
-      <div class="w-[calc(50%-1rem)] flex flex-col flex-nowrap gap-4">
+      <div class="w-[calc(50%-1rem)] flex flex-col flex-nowrap gap-4 mb:w-full">
         <div class="slider_wrapper" id="sliderContent">
           <div class="swiper main-slider w-full">
             <div class="swiper-wrapper" id="main-image">
@@ -132,7 +143,7 @@
           </div>
         </div>
       </div>
-      <div class="w-[calc(50%-1rem)]">
+      <div class="w-[calc(50%-1rem)] mb:w-full">
         <span class="text-dark_grayish_blue font-bold tracking-[2px] text-sm uppercase block">Sneaker Company</span>
         <h1 product_id="1" class="text-5xl text-very_dark_blue font-bold mt-6 product_name">
           Fall vLimited Edition Sneakers
@@ -149,15 +160,16 @@
             $250.00</span>
         </div>
         <div class="wrapper flex flex-row flex-wrap gap-4 mt-8">
-          <div class="input_group relative w-[calc(40%-0.5rem)]">
+          <div class="input_group relative w-[calc(40%-0.5rem)] mb:w-full tb:w-full">
             <img src="./images/icon-minus.svg" alt="minus"
               class="minus absolute top-[1.75rem] left-4 changeQty cursor-pointer">
-            <input type="text" value="0" class="bg-light_grayish_blue font-bold py-5 text-center outline-none qty">
+            <input type="text" value="0"
+              class="bg-light_grayish_blue font-bold py-5 text-center outline-none qty mb:w-full tb:w-full">
             <img src="./images/icon-plus.svg" alt="plus"
               class="plus absolute top-[1.75rem] right-4 changeQty cursor-pointer">
           </div>
           <button
-            class="w-[calc(60%-0.5rem)] bg-orange shadow-md shadow-orange flex items-center gap-4 font-bold rounded-lg justify-center add_to_cart cursor-pointer">
+            class="w-[calc(60%-0.5rem)] mb:w-full tb:w-full mb:py-6 tb:py-6 hover:bg-[#FFAB6A] bg-orange shadow-md shadow-orange flex items-center gap-4 font-bold rounded-lg justify-center add_to_cart cursor-pointer">
             <img src=" ./images/icon-cart.svg" class="w-4 h-4 object-cover" alt="add_to_cart">Add to cart</button>
         </div>
       </div>
@@ -173,6 +185,21 @@
 
   <script src="./vendor/slider.js"></script>
   <script src="./vendor/cart.js"></script>
+  <script>
+    let overlayMenu = document.querySelector('.overlay')
+    let header = document.querySelector('header')
+    let clickOverlay = () => {
+      header.toggleAttribute('mobile')
+      overlayMenu.toggleAttribute('show')
+    }
+    let openMenu = () => {
+      header.toggleAttribute('mobile')
+      overlayMenu.toggleAttribute('show')
+    }
+    let mobileMenu = document.querySelector('.mobile_menu')
+    mobileMenu.addEventListener('click', openMenu)
+    overlayMenu.addEventListener('click', clickOverlay)
+  </script>
 </body>
 
 </html>

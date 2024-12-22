@@ -36,15 +36,15 @@ let updateCartQty = (qty) => document.querySelector('.cart_qty').textContent = q
 let getCart = () => localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
 let saveCart = (cart) => localStorage.setItem('cart', JSON.stringify(cart));
 let addCart = (cartItem) => {
-    let oldCartItem = cart.find(item => item.id == cartItem.productID)
+    let oldCartItem = cart.find(item => item.productID == cartItem.productID)
     if (!oldCartItem) {
         cart.push(cartItem);
         return false
     }
-    oldCartItem.qty = oldCartItem.qty + cartItem.qty
+    oldCartItem.qty = parseInt(oldCartItem.qty) + parseInt(cartItem.qty)
 }
 let deleteCartItem = (id) => {
-    let index = cart.findIndex(item => item.id == id)
+    let index = cart.findIndex(item => item.productID == id)
     cart.splice(index, 1)
 }
 let reloadEvent = () => {

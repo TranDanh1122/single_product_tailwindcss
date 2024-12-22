@@ -12,7 +12,11 @@ module.exports = {
         'light_grayish_blue': 'hsl(223, 64%, 98%)',
         'white': 'hsl(0, 0%, 100%)',
         'black': 'hsla(0, 0%, 0% , 0.5)',
-      }
+      },
+      screens: {
+        'mb': { min: '0px', max: '768px' },
+        'tb': { min: '769px', max: '1024px' },
+      },
     },
   },
   plugins: [],

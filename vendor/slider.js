@@ -32,6 +32,7 @@ loadScript('https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.js', fu
 let sliderOverLay = document.querySelector('.slider_overlay')
 let slider = document.getElementById('sliderContent')
 document.getElementById('main-image').addEventListener('click', function (e) {
+    if (window.innerWidth <= 768) return false;
     sliderOverLay.style.display = 'block'
     let sliderContent = slider.cloneNode('true')
     sliderContent.querySelector('.thumbnail-slider').classList.add('thumbnail-slider-clone')
