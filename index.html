@@ -32,8 +32,8 @@
 
 <body>
   <header
-    class="container w-full mx-auto my-0 flex justify-start gap-14 max-w-[1110px] py-8 border-b-[1px] border-grayish_blue relative">
-    <img src="./images/logo.svg" alt="logo" class="w-38 h-full object-cover my-auto cursor-pointer">
+    class="container w-full mx-auto my-0 flex justify-start gap-14 max-w-[1110px]  border-b-[1px] border-grayish_blue relative">
+    <img src="./images/logo.svg" alt="logo" class="w-38 h-full object-cover py-8 cursor-pointer">
     <nav>
       <ul class="nav_list flex gap-8 items-center text-dark_grayish_blue leading-6 h-full">
         <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#"> Collections</a></li>
@@ -47,7 +47,8 @@
       <img src="./images/icon-cart.svg" alt="cart" class="w-full h-full cursor-pointer cart_icon">
       <span class="cart_qty absolute top-[-1rem] left-5 text-white bg-orange rounded-[50%] px-2">0</span>
     </div>
-    <img src="./images/image-avatar.png" alt="avatar" class="w-12 h-12 rounded-[50%] object-cover cursor-pointer">
+    <img src="./images/image-avatar.png" alt="avatar"
+      class="w-12 h-12 rounded-[50%] object-cover cursor-pointer my-auto">
 
     <div class="cart_box absolute top-20 w-2/5 right-20 shadow-md p-6 pb-8 bg-white z-10 hidden">
       <span class=" block title text-very_dark_blue font-bold pb-6 border-b-[1px] border-b-grayish_blue">Cart</span>
@@ -73,7 +74,7 @@
         <div class="slider_wrapper" id="sliderContent">
           <div class="swiper main-slider w-full">
             <div class="swiper-wrapper" id="main-image">
-              <div class="swiper-slide main" classic = "./images/image-product-1.jpg">
+              <div class="swiper-slide main" classic="./images/image-product-1.jpg">
                 <img src="./images/image-product-1.jpg" />
               </div>
               <div class="swiper-slide">
@@ -143,22 +144,26 @@
         <div class="price_wrapper flex flex-wrap gap-4 gap-y-1 items-center mt-6">
           <span class="text-[1.75rem] text-very_dark_blue font-bold product_price" data-price="125"> $125.00</span>
           <span class="sale font-bold py-1 px-3 bg-slate-950 text-white rounded-xl" data-sale="125">50%</span>
-          <span class="price_old block w-full line-through text-dark_grayish_blue leading-6 font-bold" data-old_price="125">
+          <span class="price_old block w-full line-through text-dark_grayish_blue leading-6 font-bold"
+            data-old_price="125">
             $250.00</span>
         </div>
         <div class="wrapper flex flex-row flex-wrap gap-4 mt-8">
           <div class="input_group relative w-[calc(40%-0.5rem)]">
-            <img src="./images/icon-minus.svg" alt="minus" class="minus absolute top-[1.75rem] left-4 changeQty cursor-pointer">
+            <img src="./images/icon-minus.svg" alt="minus"
+              class="minus absolute top-[1.75rem] left-4 changeQty cursor-pointer">
             <input type="text" value="0" class="bg-light_grayish_blue font-bold py-5 text-center outline-none qty">
-            <img src="./images/icon-plus.svg" alt="plus" class="plus absolute top-[1.75rem] right-4 changeQty cursor-pointer">
+            <img src="./images/icon-plus.svg" alt="plus"
+              class="plus absolute top-[1.75rem] right-4 changeQty cursor-pointer">
           </div>
-          <button class="w-[calc(60%-0.5rem)] bg-orange shadow-md shadow-orange flex items-center gap-4 font-bold rounded-lg justify-center add_to_cart cursor-pointer">
+          <button
+            class="w-[calc(60%-0.5rem)] bg-orange shadow-md shadow-orange flex items-center gap-4 font-bold rounded-lg justify-center add_to_cart cursor-pointer">
             <img src=" ./images/icon-cart.svg" class="w-4 h-4 object-cover" alt="add_to_cart">Add to cart</button>
-          </div>
-        </div>
-        <div class="slider_overlay fixed top-0 left-0 h-full w-full bg-opacity-50 bg-black z-20 hidden">
         </div>
       </div>
+      <div class="slider_overlay fixed top-0 left-0 h-full w-full bg-opacity-50 bg-black z-20 hidden">
+      </div>
+    </div>
   </main>
 
   <div class="attribution">
