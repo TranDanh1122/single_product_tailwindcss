@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    html,
+    body {
+      font-family: "Kumbh Sans", sans-serif;
+      font-size: 16px;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container w-full mx-auto my-0 flex justify-start gap-14 max-w-[1110px] py-8 border-b-[1px] border-grayish_blue relative">
+    <img src="./images/logo.svg" alt="logo" class="w-38 h-full object-cover my-auto cursor-pointer">
+    <nav>
+      <ul  class="nav_list flex gap-8 items-center text-dark_grayish_blue leading-6 h-full">
+        <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#"> Collections</a></li>
+          <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#">  Men</a></li>
+          <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#">  Women</a></li>
+          <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#">  About</a></li>
+          <li class="h-full flex items-center hover:border-b-4 hover:border-orange"><a href="#">  Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cart_warraper w-6 h-6 my-auto ml-auto relative">
+      <img src="./images/icon-cart.svg" alt="cart" class="w-full h-full cursor-pointer">
+      <span class="numbers absolute top-[-1rem] left-5 text-white bg-orange rounded-[50%] px-2">0</span>
+    </div>
+    <img src="./images/image-avatar.png" alt="avatar" class="w-12 h-12 rounded-[50%] object-cover cursor-pointer">
+
+    <div class="cart_box absolute top-20 w-2/5 right-20 shadow-md p-6 pb-8 bg-white z-10">
+      <span class=" block title text-very_dark_blue font-bold pb-6 border-b-[1px] border-b-grayish_blue">Cart</span>
+      <div class="items flex w-full flex-col flex-nowrap mt-8">
+        <div class="item flex gap-4 items-center">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="product_1" class="w-12 h-12 object-cover">
+          <div class="info flex flex-wrap text-dark_grayish_blue items-center gap-1 ">
+            <span class="name block w-full">Fall Limited Edition Sneakers</span>
+            <span class="item_price inline-block" price="125">$125</span>
+            <span class="inline-block">x</span>
+            <span class="item_qty inline-block">3</span>
+            <span class="item_total inline-block font-bold ">$375</span>
+          </div>
+          <img src="./images/icon-delete.svg" alt="icon-delete" class="w-4 h-4 object-cover">
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    Sneaker Company
+
+    Fall Limited Edition Sneakers
+
+    These low-profile sneakers are your perfect casual wear companion. Featuring a
+    durable rubber outer sole, they’ll withstand everything the weather can offer.
+
+    $125.00
+    50%
+    $250.00
+
+    0
+    Add to cart
+  </main>
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+</html>
